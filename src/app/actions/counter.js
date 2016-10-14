@@ -22,6 +22,15 @@ export function incrementIfOdd() {
 
 export function incrementAsync(delay = 1000) {
   return dispatch => {
+    var success = function(message) {
+          alert(message);
+      }
+
+      var failure = function() {
+          alert("Error calling Hello Plugin");
+      }
+
+      hello.greet("World", success, failure);
     setTimeout(() => {
       dispatch(increment());
     }, delay);

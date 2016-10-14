@@ -1,0 +1,2 @@
+set solib-search-path /Users/ben/dev/maidsafe/crossbuilder-demo/src/cordova-rust-plugin/native/android/hello-jni/obj/local/armeabi-v7a
+directory /usr/local/Cellar/android-ndk/r13/platforms/android-21/arch-arm/usr/include /usr/local/Cellar/android-ndk/r13/sources/cxx-stl/gnu-libstdc++ /Users/ben/dev/maidsafe/crossbuilder-demo/src/cordova-rust-plugin/native/android/hello-jni/jni
