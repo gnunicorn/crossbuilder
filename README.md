@@ -1,8 +1,8 @@
-# CrossBuilder
+# SAFE SDK CrossBuilder
 
 [![Build Status](https://travis-ci.org/zalmoxisus/crossbuilder.svg)](https://travis-ci.org/zalmoxisus/crossbuilder)  [![Build status Windows](https://ci.appveyor.com/api/projects/status/83c3h264p0li62kl?svg=true)](https://ci.appveyor.com/project/zalmoxisus/crossbuilder) [![bitHound Score](https://www.bithound.io/github/zalmoxisus/crossbuilder/badges/score.svg)](https://www.bithound.io/github/zalmoxisus/crossbuilder) [![Dependency Status](https://david-dm.org/zalmoxisus/crossbuilder.svg)](https://david-dm.org/zalmoxisus/crossbuilder) [![devDependency Status](https://david-dm.org/zalmoxisus/crossbuilder/dev-status.svg)](https://david-dm.org/zalmoxisus/crossbuilder#info=devDependencies)
 
-Building web, Electron, Cordova and Chrome apps, and cross-browser extensions that use Redux actions for messaging.
+Building web, Electron and Cordova apps for mobile that use Redux actions for messaging and are built on top of the SAFE SDK.
 
 Redux states are synced between background, injected page, app window, extension popup and badge.
 
@@ -13,7 +13,6 @@ The developing is the same as for the web apps with React and Redux, just use th
 - `src/app`: React cross-browser application (will be imported in the apps bellow).
 - `src/web`: web app sources.
 - `src/browser`: extensions sources.
-- `src/chromeApp`: Chrome app sources
 - `src/electron`: Electron app sources
 - `test/app`: tests for Redux actions and reducers, and for React components (using [enzyme](http://airbnb.io/enzyme/)).
 - `test/chrome`: tests for Chrome app and extension (using [chromedriver](https://www.npmjs.com/package/chromedriver), [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)).
@@ -41,8 +40,7 @@ npm install
 npm start
 ```
 
-- Open web app in browser at `localhost:3000`.
-- [Load unpacked extension's `./dev` folder to Chrome.](https://developer.chrome.com/extensions/getstarted#unpacked)
+- Open the SAFE-browser at `localhost:3000`.
 
 #### React/Flux hot reload
 
@@ -69,28 +67,6 @@ npm run build:electron
 npm run start:electron
 ```
 
-## Build Chrome app
-
-```bash
-# build files to './build/app'
-npm run build:app
-```
-
-## Build Chrome extension
-
-```bash
-# build files to './build/extension'
-npm run build:extension
-```
-
-## Build Firefox extension
-
-```bash
-# build files to './build/firefox'
-npm run build:firefox
-````
-Note that you should use Firefox Nightly or Developer Edition to support WebExtensions. It's [not possible for now to load Firefox extensions from local directories](https://bugzilla.mozilla.org/show_bug.cgi?id=1185460), so use `npm run compress:firefox` instead to generate an xpi file or use Firefox Developer Edition which can load local directories. Make sure yo follow [prerequisites](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Prerequisites) and [installing instruction](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Packaging_and_installation#Installing_Your_Extension).
-
 
 ## Build & Run Cordova app
 
@@ -103,22 +79,8 @@ Note that you should use Firefox Nightly or Developer Edition to support WebExte
 ```bash
 # build and compress Electron app to [name].dmg, win32-ia32.zip, win32-x64.zip, linux-ia32.zip, linux-x64.zip
 npm run compress:electron
-
-# compress Chrome app to app.zip
-npm run compress:app
-
-# compress Chrome extension to extension.zip
-npm run compress:extension
-
-# compress Firefox extension to firefox.xpi
-npm run compress:firefox
 ```
 
-## Load
-
-- [Load the extension to Chrome](https://developer.chrome.com/extensions/getstarted#unpacked).
-- [Launch your Chrome app](https://developer.chrome.com/apps/first_app#five).
-- Firefox: [Prerequisites](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Prerequisites), [Installing](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Packaging_and_installation#Installing_Your_Extension).
 
 ## Test
 
@@ -129,15 +91,6 @@ npm run test:app
 # start Chromedriver for testing with Chrome
 npm run before:test:chrome
 
-# test Chrome extension
-npm run test:chrome:extension
-
-# test Chrome app
-npm run test:chrome:app
-
-# test Chrome extension and app
-npm run test:chrome
-
 # test everything
 npm test
 ```
@@ -146,10 +99,8 @@ npm test
 
 - [x] Web app
 - [x] Electron app
-- [x] Chrome app
-- [x] Chrome extension
-- [x] Firefox extension (see [the current status](https://github.com/zalmoxisus/crossbuilder/issues/12))
-- [ ] Safari extension (based on [Chrome to Safari port](https://code.google.com/p/adblockforchrome/source/browse/trunk/port.js))
+- [x] Integrate Rust Example
+- [ ] Integrate external Rust crate
 
 ## LICENSE
 

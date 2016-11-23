@@ -9,8 +9,8 @@ gulp.task('build:web', ['webpack:build:web', 'views:build:web', 'copy:build:web'
 gulp.task('build:cordova', ['webpack:build:cordova', 'views:build:cordova', 'copy:build:cordova']);
 gulp.task('build:electron',
   ['webpack:build:electron', 'views:build:electron', 'copy:build:electron']);
-gulp.task('build:extension',
-  ['webpack:build:extension', 'views:build:extension', 'copy:build:extension']);
-gulp.task('build:app', ['webpack:build:app', 'views:build:app', 'copy:build:app']);
-gulp.task('build:firefox', ['copy:build:firefox']);
+// gulp.task('build:extension',
+  // ['webpack:build:extension', 'views:build:extension', 'copy:build:extension']);
+// gulp.task('build:app', ['webpack:build:app', 'views:build:app', 'copy:build:app']);
+// gulp.task('build:firefox', ['copy:build:firefox']);
 gulp.task('test-chrome', ['chrome:test']);
